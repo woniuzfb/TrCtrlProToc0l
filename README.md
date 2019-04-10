@@ -6,7 +6,7 @@
 ## Usage
 
 ```
-bash -c "$(wget --no-check-certificate -qO- https://github.com/Aniverse/TrCtrlProToc0l/raw/master/A)"
+bash -c "$(wget --no-check-certificate -qO- https://github.com/woniuzfb/TrCtrlProToc0l/raw/master/A)"
 ```
 
 ## Features
