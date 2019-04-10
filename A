@@ -1249,7 +1249,7 @@ dpkg -l | grep generic-hwe   | grep "${kernel_version}" | awk '{print $2}' >> /l
 
 kernel_total_num=` cat /log/kernel_tobe_del_list | wc -l `
 
-if [ $kernel_total_num > 1 ]; then
+if [ $kernel_total_num -gt 1 ]; then
     for (( integer = 1 ; integer <= ${kernel_total_num} ; integer++ )) ; do
       # kernel_tobe_del=` dpkg -l | grep -E linux-[image,headers,modules] | grep -v binutils | awk '{print $2}' | grep -v "${kernel_version}" | head -${integer} `
         kernel_tobe_del=` cat /log/kernel_tobe_del_list | sed -n "${integer}p" `
@@ -1278,7 +1278,7 @@ dpkg -l | grep generic-hwe   | grep -v "${kernel_version}" | awk '{print $2}' >>
 [[ $DeBUG == 1 ]] && cat /log/kernel_tobe_del_list
 kernel_total_num=` cat /log/kernel_tobe_del_list | wc -l `
 
-if [ $kernel_total_num > 1 ]; then
+if [ $kernel_total_num -gt 1 ]; then
     for (( integer = 1 ; integer <= ${kernel_total_num} ; integer++ )) ; do
       # kernel_tobe_del=` dpkg -l | grep -E linux-[image,headers,modules] | grep -v binutils | awk '{print $2}' | grep -v "${kernel_version}" | head -${integer} `
         kernel_tobe_del=` cat /log/kernel_tobe_del_list | sed -n "${integer}p" `
